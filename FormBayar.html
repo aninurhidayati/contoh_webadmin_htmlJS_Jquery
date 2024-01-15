@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Halaman Admin</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/style.css">
+    <!-- icon bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+</head>
+<body class="bg-info" id="formpembayaran">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-2 bg-black left-menu">
+                <h4 class="pb-3 text-white text-center border-bottom">PT. ASE Software House</h4>
+                <iframe src="menu.html" width="600" height="400" frameborder="0"></iframe>
+            </div>
+            <!-- konten kanan -->
+            <div class="col-md-10 p-4" >
+                <h4 id="title">Form Pembayaran</h4>
+                <hr>
+                <!-- bagian form konten -->
+                <form action="#">
+                    <div class="row pb-1">
+                        <label for="nama" class="col-md-2 form-label">Kode Pembayaran</label>
+                        <div class="col-md-3">
+                          <input type="text" id="kode"  class="form-control" readonly />
+                        </div>
+                    </div>
+                    <div class="row pb-1">
+                        <label for="nama" class="col-md-2 form-label">Nama Mahasiswa</label>
+                        <div class="col-md-3">
+                          <input type="text" id="nama" class="form-control"  />
+                        </div>
+                    </div>
+                    <div class="row pb-1">
+                        <label for="" class="col-md-2 form-label">Jenis Kelamin</label>
+                        <div class="col-md-6">
+                            <input class="form-check-input" type="radio" name="jk" id="jk1" value="Perempuan" />
+                            <label class="form-check-label" for="jk"> Perempuan </label> &nbsp;
+                            <input class="form-check-input" type="radio" name="jk" id="jk2" value="Laki-laki" />
+                            <label class="form-check-label" for="jk"> Laki-laki </label>
+                        </div>
+                    </div>
+                    <div class="row pb-1">                        
+                            <label for="action" class="col-md-2 form-label">Jurusan</label>
+                            <div class="col-md-3">
+                                <select name="jurusan" id="jurusan" class="form-select">
+                                    <option value="">-- Pilih Jurusan --</option>
+                                    <option value="IT">Teknik Informatika</option>
+                                    <option value="ACC">Akuntansi</option>
+                                    <option value="ADM">Administrasi</option>
+                                </select>
+                            </div>                                
+                    </div>
+                    <div class="row pb-1">                        
+                        <label for="action" class="col-md-2 form-label">Jenis Pembayaran</label>
+                        <div class="col-md-3">
+                            <select name="jenisbayar" id="jenisbayar" class="form-select">
+                                <option value="">-- Pilih Pembayaran --</option>
+                                <option value="SMT">SEMESTER</option>
+                                <option value="UAS">UAS</option>
+                                <option value="UTS">UTS</option>
+                                <option value="HER">HER</option>
+                            </select>
+                        </div>                                
+                    </div>
+                    <div class="row pb-1">
+                        <label for="nama" class="col-md-2 form-label">Nominal / Jumlah Bayar</label>
+                        <div class="col-md-2">
+                            <input type="number" name="nominal" id="nominal" class="form-control" readonly />
+                          </div>
+                        <div class="col-md-1">
+                          <input type="text" name="jml" id="jml" class="form-control"  />
+                        </div>
+                    </div>
+                    <div class="row pb-1">
+                        <label for="nama" class="col-md-2 form-label">Keterangan</label>
+                        <div class="col-md-4">
+                            <textarea name="Keterangan" id="Keterangan" cols="70" rows="2" class="form-control"></textarea>
+                            <span id="note" class="alert-danger text-danger" style="display: none">Panjang Karakter < 30 Karakter</span>
+                        </div>
+                    </div>
+                    <div class="row pb-1">
+                        <div class="col-md-2"></div>
+                        <div class="col-md-4">
+                          <button id="btndaftar" type="button" class="form-control btn btn-primary"><i class="bi bi-envelope-plus-fill"></i> Simpan Pembayaran</button>
+                        </div>
+                    </div>
+                </form>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="card" id="buktibayar">
+                            <h5 class="card-header">Bukti Bayar Kode : <span id="kodebayar"></span></h5>
+                            <div class="card-body">
+                                Nama : <span id="out_nama">_____</span> , 
+                                Jenis Kelamin : <span id="out_jk">_____</span> 
+                                Jurusan : <span id="out_jurusan">_____</span> ,
+                                <br>
+                                Jenis Pembayaran : <span id="out_jenis">_____</span>, 
+                                Jumlah : <span id="out_jumlah">_____</span>, <br>
+                                <b>Total Bayar: <span id="out_total">_____</span></b> <br>
+                                Keterangan : <span id="out_ket">_____</span>, 
+                                <hr>
+                                <a href="#" class="btn btn-primary" onclick="window.print()"><i class="bi bi-printer"></i> Cetak</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- file js -->
+    <!-- <script src="assets/js/home.js"></script> -->
+    <script src="assets/js/bayar.js"></script>
+    <!-- bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>

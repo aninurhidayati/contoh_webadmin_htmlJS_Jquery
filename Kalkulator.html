@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Halaman Admin</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/style.css">
+    <!-- icon bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+</head>
+<body class="bg-info">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-2 bg-black left-menu">
+                <h4 class="pb-3 text-white text-center border-bottom">PT. ASE Software House</h4>
+                <iframe src="menu.html" width="600" height="400" frameborder="0"></iframe>
+            </div>
+            <div class="col-md-10 p-4">
+                <h4 id="title">Form Kalkulator</h4>
+                <hr>
+                <!-- bagian form konten -->
+                <form action="#">
+                    <div class="row">
+                      <div class="col-md-2">
+                        <label for="nilai1" class="form-label">Nilai-1</label>
+                        <input type="text" name="nilai1" id="nilai1" class="form-control" />
+                      </div>
+                      <div class="col-md-2">
+                        <label for="nilai2" class="form-label">Nilai-2</label>
+                        <input type="text" name="nilai2" id="nilai2" class="form-control" />
+                      </div>
+                      <div class="col-md-2">
+                        <label for="action" class="form-label">Operator</label>
+                        <select name="action" id="action" class="form-select">
+                          <option value="">-- Pilih --</option>
+                          <option value="+">+</option>
+                          <option value="-">-</option>
+                          <option value="/">/</option>
+                          <option value="*">*</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="row pt-2">
+                      <div class="col-md-6">
+                        <button type="button" id="btn_hasil" class="btn btn-primary form-control" onclick="hitung()">Proses</button>
+                      </div>
+                    </div>
+                    <hr />
+                    <div class="alert alert-success mt-5" role="alert" id="hasilkalkulator" style="display: none"></div>
+                    <button id="btnreset" type="button" class="btn btn-secondary">reset</button>
+                  </form>
+            </div>
+        </div>
+    </div>
+    <!-- file js -->
+    <!-- <script src="assets/js/home.js"></script> -->
+    <script src="assets/js/kalkulator.js"></script>
+    <!-- bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
